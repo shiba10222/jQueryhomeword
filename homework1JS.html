@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一題純JS</title>
+    <style>
+        .container {
+            display: flex;
+            width: 900px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .table {
+            display: flex;
+            width: 80px;
+            height: 80px;
+            background-color: orange;
+            font-size: 36px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .table1 {
+            border-radius: 20px 20px 0 0;
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .table2 {
+            border-radius: 0 20px 20px 0;
+            grid-column-start: 3;
+            grid-row: 2;
+        }
+
+        .table3 {
+            border-radius: 0 0 20px 20px;
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        .table4 {
+            border-radius: 20px 0 0 20px;
+            grid-column: 1;
+            grid-row: 2;
+
+        }
+
+        .active {
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="table table1">1</div>
+            <div class="table table2">2</div>
+            <div class="table table3">3</div>
+            <div class="table table4">4</div>
+        </div>
+        <div class="wrapper">
+            <div class="table table1">1</div>
+            <div class="table table2">2</div>
+            <div class="table table3">3</div>
+            <div class="table table4">4</div>
+        </div>
+        <div class="wrapper">
+            <div class="table table1">1</div>
+            <div class="table table2">2</div>
+            <div class="table table3">3</div>
+            <div class="table table4">4</div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+        let num = 0
+        const allTable = document.querySelectorAll(".table");
+
+        document.querySelector("html")
+            .addEventListener("keydown", e => {
+                if (e.which === 39) {
+                    if (allTable[num - 1])
+                        allTable[num - 1].classList.remove("active");
+                    allTable[num].classList.add("active");
+                    if (num < allTable.length - 1) {
+                        num++;
+                    }
+                } else if (e.which === 37) {
+                    if (num < allTable.length) {
+                        allTable[num].classList.remove("active");
+                    }
+                    if (num > 0) {
+                        num--;
+                        allTable[num].classList.add("active");
+                    }
+                }
+            })
+    </script>
+</body>
+
+</html>

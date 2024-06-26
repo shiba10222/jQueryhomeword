@@ -84,21 +84,18 @@
     </div>
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script>
-        let num = 0
+        let num = -1
         let totalTable = $(".table").length;
         $(window).on("keydown", e => {
-            if (e.which === 39) {
+            if (e.which === 39 && num < totalTable - 1) {
+                num++
                 $(".table").removeClass("active");
                 $(".table").eq(num).addClass("active");
-                if (num < totalTable - 1) {
-                    num++
-                }
-            } else if (e.which === 37) {
+            } else if (e.which === 37 && num > 0) {
+                num--;
                 $(".table").removeClass("active");
                 $(".table").eq(num).addClass("active");
-                if (num > 0) {
-                    num--;
-                }
+
             }
         })
     </script>

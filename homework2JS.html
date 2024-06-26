@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第一題純JS</title>
+    <title>第二題純JS</title>
     <style>
         .container {
             display: flex;
@@ -85,7 +85,7 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script>
         let num = -1
-        const allTable = document.querySelectorAll(".table");
+        const allTable = document.querySelectorAll(".container div");
         document.querySelector("html")
             .addEventListener("keydown", e => {
                 if (e.which === 39 && num < allTable.length - 1) {

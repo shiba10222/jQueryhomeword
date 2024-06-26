@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第一題純JS</title>
+    <title>第三題</title>
     <style>
         .container {
             display: flex;
@@ -63,11 +63,12 @@
 
 <body>
     <div class="container">
-        <div class="wrapper">
+        <div class="wrapper table5">
             <div class="table table1">1</div>
             <div class="table table2">2</div>
             <div class="table table3">3</div>
             <div class="table table4">4</div>
+            
         </div>
         <div class="wrapper">
             <div class="table table1">1</div>
@@ -84,22 +85,11 @@
     </div>
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script>
-        let num = -1
-        const allTable = document.querySelectorAll(".table");
-        document.querySelector("html")
-            .addEventListener("keydown", e => {
-                if (e.which === 39 && num < allTable.length - 1) {
-                    num++;
-                    allTable[num].classList.add("active");
-                    if (num > 0) {
-                        allTable[num - 1].classList.remove("active");
-                    }
-                } else if (e.which === 37 && num > 0) {
-                    num--;
-                    allTable[num + 1].classList.remove("active");
-                    allTable[num].classList.add("active");
-                }
-            })
+        $("html").on("keydown", e => {
+            if (e.which === 39) {
+                $(".table[]")
+            }
+        })
     </script>
 </body>
 
